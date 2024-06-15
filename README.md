@@ -73,6 +73,14 @@ This project is a FastAPI application designed to handle accounts and destinatio
   - **GET** `/accounts/{account_id}/destinations/`
   - Retrieves all destinations associated with an account.
 
+### Data Handler
+
+- **Data Handler Endpoint**
+  - **POST** `/server/incoming_data`
+  - Header: `CL-X TOKEN` (App secret token for authentication)
+  - Body: JSON data containing the incoming data.
+  - Validates the token, retrieves associated account, and forwards data to account destinations.
+
 ## Setting Up the Project
 
 To run the project locally, follow these steps:
