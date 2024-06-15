@@ -20,6 +20,9 @@ This project is a FastAPI application designed to handle accounts and destinatio
   - Identify the account associated with the token.
   - Forward received data to all configured destinations for that account based on HTTP methods.
 
+### Screenshots
+![alt text](<Screenshot from 2024-06-15 14-11-36.png>)
+
 ## Endpoints
 
 ### Accounts
