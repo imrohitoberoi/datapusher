@@ -1,5 +1,5 @@
 from pydantic import BaseModel, EmailStr, HttpUrl
-from typing import Optional
+from typing import Dict, Optional
 
 
 class AccountCreate(BaseModel):
@@ -19,6 +19,27 @@ class AccountResponse(BaseModel):
     account_name: str
     app_secret_token: str
     website: Optional[HttpUrl]
+
+    class Config:
+        orm_mode = True
+
+
+class DestinationCreate(BaseModel):
+    url: HttpUrl
+    http_method: str
+    headers: Dict[str, str]
+
+class DestinationUpdate(BaseModel):
+    url: Optional[HttpUrl] = None
+    http_method: Optional[str] = None
+    headers: Optional[Dict[str, str]] = None
+
+class DestinationResponse(BaseModel):
+    destination_id: int
+    account_id: int
+    url: HttpUrl
+    http_method: str
+    headers: Dict[str, str]
 
     class Config:
         orm_mode = True
